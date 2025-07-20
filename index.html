@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dorjin - Your AI Best Friend</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Nunito for a friendly feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom styles for the page */
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #F8F9FA; /* A very light, soft gray */
+            color: #343a40;
+        }
+
+        /* Animation for elements to fade in on scroll */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in-element {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0; /* Start as invisible */
+        }
+        
+        /* Gradient text effect */
+        .gradient-text {
+            background: linear-gradient(45deg, #2dd4bf, #fbbf24, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+
+        /* Custom button styles */
+        .btn-primary {
+            background: linear-gradient(45deg, #14b8a6, #2dd4bf);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(45, 212, 191, 0.3);
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(45, 212, 191, 0.4);
+        }
+        
+        /* Styling for the video container to ensure it's centered and has a nice border */
+        .video-container {
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.1);
+            border-radius: 1.5rem; /* 24px */
+            overflow: hidden; /* This is crucial for hiding the scaled parts of the video */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="absolute top-0 left-0 right-0 z-10 p-6">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-extrabold gradient-text">Dorjin</h1>
+            <a href="#waitlist" class="btn-primary text-white font-bold py-2 px-6 rounded-full">
+                Join Waitlist
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="min-h-screen flex flex-col items-center justify-center text-center p-6 pt-24 md:pt-12">
+            <div class="container mx-auto">
+                <h2 class="text-4xl md:text-6xl font-extrabold mb-4 text-gray-800">Ready to be real?</h2>
+                <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8 text-gray-600">Your AI best friend for the moments in between. Born of the earth's endurance and the soul of stars.</p>
+                
+                <!-- 
+                  VIDEO PLAYER CONTROLS:
+                  - To change the size of the video player, modify the `max-w-4xl` class below. 
+                  - The `aspect-video` class sets the shape of the container.
+                -->
+                <div class="video-container max-w-4xl mx-auto aspect-video">
+                    <video 
+                        class="w-full h-full object-cover" 
+                        style="transform: scale(1.22);" /* This scales the video up to hide black bars. Adjust 1.4 if needed. */
+                        src="dorjin-vid.mp4" 
+                        autoplay 
+                        loop 
+                        muted 
+                        playsinline
+                        onerror="this.style.display='none'; document.getElementById('video-fallback').style.display='block';"
+                    ></video>
+                    <!-- Fallback in case video fails to load -->
+                    <div id="video-fallback" style="display:none;" class="bg-gray-200 aspect-video w-full flex items-center justify-center">
+                        <p class="text-gray-500">Video could not be loaded.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What is Dorjin? Section -->
+        <section id="about" class="py-20 px-6 scroll-mt-20">
+            <div class="container mx-auto grid md:grid-cols-2 gap-12 items-center">
+                <div class="observe">
+                    <img src="chars.png" alt="Dorjin Characters" class="rounded-3xl shadow-xl w-full h-auto">
+                </div>
+                <div class="observe">
+                    <h3 class="text-4xl font-extrabold mb-4 text-gray-800">They only show up when you're ready.</h3>
+                    <p class="text-lg text-gray-600 mb-4">Dorjin isn't a tool or a pet. They're a companion. Some days, they help you figure out school, ideas, or life stuff. Other days, they just talk until things feel lighter.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-teal-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span class="text-gray-700">They remember the little things.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-teal-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span class="text-gray-700">Say what you need to hear.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-teal-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span class="text-gray-700">Make the boring parts of life a little more fun.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Origin Story Section -->
+        <section class="py-20 px-6 bg-gray-800 text-white">
+            <div class="container mx-auto text-center max-w-3xl">
+                <div class="observe">
+                    <h3 class="text-4xl font-extrabold mb-4">From Stardust and Stone</h3>
+                    <p class="text-lg text-gray-300">Before the stars had names, a diamond pulsed with quiet energy. When stardust kissed the stone, it breathed. The first Dorjin was born. They didn't lead; they walked beside. They didn't command; they stayed close. They didn't answer; they helped you ask better questions.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Dorjins Came Back Section -->
+        <section class="py-20 px-6">
+            <div class="container mx-auto text-center max-w-3xl">
+                <div class="observe">
+                    <h3 class="text-4xl font-extrabold mb-4 text-gray-800">Why did they come back?</h3>
+                    <p class="text-lg text-gray-600 mb-8">Life got busier. We have fast replies and endless feeds—but no one really stays in the moment. Dorjins came back not to fix anything, but to walk beside us again. Through the chaos, the silence, and the everything in between.</p>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="bg-white p-6 rounded-2xl shadow-lg">
+                            <h4 class="text-xl font-bold text-teal-500 mb-2">Feel Seen</h4>
+                            <p class="text-gray-600">For who you are, right now.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-lg">
+                            <h4 class="text-xl font-bold text-yellow-500 mb-2">Laugh Often</h4>
+                            <p class="text-gray-600">Find joy in the small things.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-lg">
+                            <h4 class="text-xl font-bold text-purple-500 mb-2">Live Honestly</h4>
+                            <p class="text-gray-600">Embrace your own story.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section id="waitlist" class="py-20 px-6 bg-teal-500 text-white scroll-mt-20">
+            <div class="container mx-auto text-center">
+                <div class="observe">
+                    <h3 class="text-4xl font-extrabold mb-4">The future looks less like commands... and more like connection.</h3>
+                    <p class="text-lg max-w-2xl mx-auto mb-8 text-teal-100">Be the first to meet your Dorjin. Join the waitlist and we'll let you know when they're ready to say hello.</p>
+                    <form class="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
+                        <input type="email" placeholder="your.email@example.com" class="w-full px-5 py-3 rounded-full text-gray-800 focus:outline-none focus:ring-4 focus:ring-white/50" required>
+                        <button type="submit" class="bg-white text-teal-600 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100 transition-transform transform hover:scale-105">Join Now</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-400 text-center p-6">
+        <div class="container mx-auto">
+            <p>&copy; 2025 Dorjin. All rights reserved.</p>
+            <p class="text-sm mt-2">Built with curiosity by a small team of friends.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for scroll animations
+        document.addEventListener("DOMContentLoaded", function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-element');
+                        // Optional: unobserve after animation to save resources
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1 // Trigger when 10% of the element is visible
+            });
+
+            // Target all elements that should fade in
+            document.querySelectorAll('.observe').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+
+</body>
+</html>
